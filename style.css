@@ -356,4 +356,75 @@ footer .logo-main {
     .split {
         flex-direction: column;
     }
+
 }
+
+  .contact-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .social-text {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .social-link {
+    color: #e56a54; /* Etsy-ish color, feel free to change! */
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .social-link:hover {
+    text-decoration: underline;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .input-group input, 
+  .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Keeps padding inside the width */
+    font-family: sans-serif;
+  }
+
+  .whatsapp-submit-btn {
+    background-color: #25d366; /* WhatsApp Green */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-submit-btn:hover {
+    background-color: #1ebe57;
+  }

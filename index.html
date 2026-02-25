@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mam Stitch | Handmade Elegance</title>
+    <link rel="icon" type="image/svg" href="mam-stitch_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -576,15 +577,35 @@ z" />
         </div>
     </section>
 
-    <section id="contact" class="section fade-in">
-        <h2 class="section-title">Custom Orders & Inquiries</h2>
-        <form class="minimal-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea rows="4" placeholder="Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
+<section id="contact-us" class="contact-container">
+  
+  <h2>Get in Touch</h2>
+  <p class="social-text">
+    Check out our work or send us a message! <br>
+    Shop on <a href="https://www.etsy.com/shop/YOUR_ETSY_SHOP" target="_blank" class="social-link">Etsy</a> | 
+    Follow on <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" class="social-link">Instagram</a>
+  </p>
+
+  <form id="whatsappForm" class="contact-form">
+    <div class="input-group">
+      <label for="senderName">Your Name</label>
+      <input type="text" id="senderName" placeholder="Enter your name" required>
+    </div>
+
+    <div class="input-group">
+      <label for="senderEmail">Your Email</label>
+      <input type="email" id="senderEmail" placeholder="Enter your email" required>
+    </div>
+
+    <div class="input-group">
+      <label for="senderMessage">Message</label>
+      <textarea id="senderMessage" rows="5" placeholder="How can we help you?" required></textarea>
+    </div>
+
+    <button type="submit" class="whatsapp-submit-btn">Send Message via WhatsApp</button>
+  </form>
+
+</section>
 
     <footer>
         <div class="logo">
@@ -1076,5 +1097,6 @@ z" />
 
     <script src="script.js"></script>
 </body>
+
 
 </html>

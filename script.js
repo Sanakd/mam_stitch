@@ -30,4 +30,28 @@ const appearOnScroll = new IntersectionObserver(function (entries, observer) {
 
 fadeElements.forEach(element => {
     appearOnScroll.observe(element);
+
 });
+
+document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+    // Prevent the form from trying to refresh the page
+    event.preventDefault();
+
+    //  Get the values the user typed in
+    const name = document.getElementById('senderName').value;
+    const email = document.getElementById('senderEmail').value;
+    const message = document.getElementById('senderMessage').value;
+
+  
+    const phoneNumber = "212708267705"; 
+
+    // Format the message for WhatsApp
+    const rawMessage = `*New Website Inquiry!*\n\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+    
+    // We have to encode it so spaces and line breaks work in the URL
+    const encodedMessage = encodeURIComponent(rawMessage);
+
+    //  Create the final WhatsApp link and open it
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  });

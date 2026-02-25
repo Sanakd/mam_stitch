@@ -1,0 +1,359 @@
+/* --- Variables & Reset --- */
+:root {
+    --bg-cream: #FAF8F5;
+    --accent-red: #B3392E;
+    /* From the Bloom Bag post */
+    --text-brown: #6A4A3C;
+    /* From the Mam Stitch Logo */
+    --text-dark: #333333;
+
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-script: 'Great Vibes', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3 {
+    font-family: var(--font-serif);
+    color: var(--text-brown);
+    font-weight: 600;
+}
+
+.accent-text {
+    font-family: var(--font-script);
+    color: var(--accent-red);
+    font-size: 2.5rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: var(--bg-cream);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background-color: var(--text-brown);
+}
+
+/* --- Navigation --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background-color: var(--bg-cream);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-brown);
+}
+
+.logo-main {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.logo-sub {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- SVG Logo Styling --- */
+.logo-svg {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+/* This changes the color of the SVG shapes */
+.logo-svg path,
+.logo-svg circle,
+.logo-svg rect {
+    fill: var(--text-brown);
+    /* Uses your warm taupe color */
+    transition: fill 0.3s ease;
+    /* Makes color changes smooth */
+}
+
+/* Optional: Make the logo turn terracotta red when you hover over it! */
+.logo:hover .logo-svg path,
+.logo:hover .logo-svg circle,
+.logo:hover .logo-svg rect {
+    fill: var(--accent-red);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-brown);
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-red);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    /* Optional: Add a subtle background texture image here */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: var(--text-brown);
+}
+
+/* --- Layouts & Sections --- */
+.section {
+    padding: 6rem 5%;
+}
+
+/* Collection Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.price-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--bg-cream);
+    color: var(--accent-red);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 248, 245, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .img-container img {
+    transform: scale(1.05);
+}
+
+.card:hover .hover-overlay {
+    opacity: 1;
+}
+
+.card-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-info p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+/* Split Section (Our Story) */
+.split {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background-color: #F4EFEB;
+    /* Slightly darker cream to break up sections */
+}
+
+.split-text,
+.split-img {
+    flex: 1;
+}
+
+.split-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.split-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.split-img img {
+    width: 100%;
+    display: block;
+}
+
+/* Form */
+.minimal-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.minimal-form input,
+.minimal-form textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid var(--text-brown);
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.minimal-form input:focus,
+.minimal-form textarea:focus {
+    border-bottom: 2px solid var(--accent-red);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 4rem 20px;
+    background-color: var(--bg-cream);
+    color: var(--text-brown);
+}
+
+footer .logo-main {
+    color: var(--bg-cream);
+    margin-bottom: 1rem;
+}
+
+/* Animations (Triggered by JS) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .split {
+        flex-direction: column;
+    }
+}
